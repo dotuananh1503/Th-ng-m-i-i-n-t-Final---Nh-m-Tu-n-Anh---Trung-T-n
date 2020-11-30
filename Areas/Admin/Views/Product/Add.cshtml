@@ -1,0 +1,70 @@
+﻿@model Huflix.Areas.Admin.Models.Product
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Thêm sản phẩm mới</h1>
+<hr />
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="Add" asp-controller="Product" method="post" enctype="multipart/form-data">
+            <div class="form-group row">
+                <label asp-for="Name" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-6">
+                    <input asp-for="Name" class="form-control" />
+                </div>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Image</label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="file" name="photo" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="Code" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-6">
+                    <input asp-for="Code" class="form-control" />
+                </div>
+                <span asp-validation-for="Code" class="text-danger"></span>
+            </div>
+
+          
+            @**//CategoryId*@
+            <div class="form-group row">
+                <label asp-for="Category.CategoryName" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-6">
+                    <select asp-for="CategoryId" class="form-control" asp-items="@ViewBag.Categories">
+                    </select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+                <a class="btn btn-primary" asp-controller="Category" asp-action="Add"><i class="fas fa-plus"></i></a>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="Price" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-6">
+                    <input asp-for="Price" class="form-control" />
+                </div>
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Description" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-6">
+                    <input asp-for="Description" class="form-control" />
+                </div>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+           
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+
+            <a asp-action="Index">Back to List</a>
+        </form>
+    </div>
+</div>

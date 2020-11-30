@@ -1,0 +1,31 @@
+﻿@using Huflix.Areas.Admin.Models
+@{
+    ViewData["Title"] = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<Product>
+@section Carousel{
+    <div class="hero common-hero">
+        <div class="container">
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+}
+<h2>Kết quả tìm kiếm</h2>
+<div class="flex-wrap-movielist">
+    @foreach (var item in Model)
+    {
+        <div class="movie-item-style-2 movie-item-style-1">
+            <img src="~/images/products/@item.Image" alt="">
+            <div class="hvr-inner">
+                <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id" asp-route-name="@item.Name"> Xem thêm <i class="ion-android-arrow-dropright"></i> </a>
+            </div>
+            <div class="mv-item-infor">
+                <h6><a>@item.Name</a></h6>
+            </div>
+        </div>
+    }
+</div>
+

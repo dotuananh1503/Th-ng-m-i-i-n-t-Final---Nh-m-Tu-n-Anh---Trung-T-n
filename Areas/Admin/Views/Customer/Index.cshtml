@@ -1,0 +1,35 @@
+﻿@model List<Huflix.Areas.Admin.Models.Customer>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Số lượng KH: @Model.Count</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <td><strong>ID</strong></td>
+            <td><strong>Họ tên</strong></td>
+            <td><strong>Số điện thoại</strong></td>
+            <td><strong>Email</strong></td>
+            <td><strong>Điểm tích lũy</strong></td>
+            <td><strong>Mức giảm giá</strong></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CustomerId</td>
+                <td>@item.FullName</td>
+                <td>@item.Phone</td>
+                <td>@item.Email</td>
+                <td>@item.TotalPoint</td>
+                <td>@item.DiscountPercent</td>
+                <td>
+                    <a class="btn btn-outline-danger" asp-controller="Customer" asp-action="Delete" asp-route-id="@item.CustomerId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

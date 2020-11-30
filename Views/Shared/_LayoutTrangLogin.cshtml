@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Huflix</title>
+    <link href="~/css/login.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/plugins.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=573479216835112&autoLogAppEvents=1"></script>
+
+
+    <header class="ht-header">
+        <div class="container">
+            <nav class="navbar navbar-default navbar-custom">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header logo">
+                    <div class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <div id="nav-icon1">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <a asp-controller="Home" asp-action="Index"><img class="logo" src="~/images/logoHuflix.png" alt="" width="119" height="50"></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav flex-child-menu menu-left">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+                        <li><a asp-controller="Home" asp-action="HigherSearch">Sản phẩm</a></li>
+                        <li><a asp-controller="Home" asp-action="Contact">Liên hệ</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav flex-child-menu menu-right">
+                        <partial name="_LayoutPartial" />
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+
+            <!-- top search form -->
+            <div class="top-search">
+
+                <form class="form-inline" asp-controller="Home" asp-action="HigherSearch" method="get">
+                    <input class="form-control" name="search" type="text" placeholder="Tìm kiếm phim">
+                    <button class="item item-1 redbtn" type="submit">Tìm</button>
+                </form>
+
+            </div>
+        </div>
+    </header>
+    @RenderSection("Title", required: false)
+    <div class="buster-light">
+        <div class="page-single">
+            <div class="container">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="ht-footer">
+        <div class="container">
+            <div class="flex-parent-ft">
+                <div class="flex-child-ft item1">
+                    <a href="index-2.html"><img class="logo" src="~/images/logoHuflix.png" alt="" width="119" height="50" alt=""></a>
+                    <p>
+                        255 Sư Vạn Hạnh Q10<br>
+                        Thành phố Hồ Chí Minh, Việt Nam
+                    </p>
+
+                </div>
+                <div class="flex-child-ft item2">
+                    <h4>Nhà phát triển</h4>
+                    <ul>
+                        <li><a href="#">Đỗ Tuấn Anh</a></li>
+                        <li><a href="#">Lâm Hồ Trung Tín</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex-child-ft item3">
+                    <h4>Newsletter</h4>
+                    <p>Nhấn subscribe để <br> nhận tin từ website nhé.</p>
+                    <a href="#" class="btn">Subscribe now <i class="ion-ios-arrow-forward"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/plugins2.js"></script>
+    <script src="~/js/custom.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

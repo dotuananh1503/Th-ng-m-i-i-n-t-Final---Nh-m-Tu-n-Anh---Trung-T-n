@@ -1,0 +1,37 @@
+﻿@using Huflix.Areas.Admin.Models
+@{
+    ViewData["Title"] = "HigherSearch";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<Product>
+@section Carousel{
+    <div class="hero common-hero">
+        <div class="container">
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+}
+<form class="form-inline" asp-controller="Home" asp-action="HigherSearch" method="get">
+    Thể loại: @Html.DropDownList("categoryID", null, "All", new { @class = "form-control" })
+    <input name="search" class="form-control" type="search" placeholder="Tìm kiếm tên sản phẩm..." aria-label="Search">
+    <button class="item item-1 redbtn" type="submit">Tìm kiếm</button>
+</form>
+
+<h2>Danh sách sản phẩm</h2>
+<div class="flex-wrap-movielist">
+    @foreach (var item in Model)
+    {
+        <div class="movie-item-style-2 movie-item-style-1">
+            <img src="~/images/products/@item.Image" alt="">
+            <div class="hvr-inner">
+                <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id" asp-route-name="@item.Name"> Xem thêm <i class="ion-android-arrow-dropright"></i> </a>
+            </div>
+            <div class="mv-item-infor">
+                <h6><a>@item.Name</a></h6>
+            </div>
+        </div>
+    }
+</div>
+

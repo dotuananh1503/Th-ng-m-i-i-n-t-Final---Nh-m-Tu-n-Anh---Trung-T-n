@@ -1,0 +1,43 @@
+﻿@model List<Huflix.Areas.Admin.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Count: @Model.Count</h2>
+<p><a class="btn btn-primary" asp-area="Admin" asp-controller="Product" asp-action="Add">Add</a></p>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td><strong>Hình ảnh</strong></td>
+            <td><strong>Mã SP</strong></td>
+            <td><strong>Tên</strong></td>
+            <td><strong>Danh mục</strong></td>
+            <td><strong>Giá</strong></td>
+            <td><strong>Mô tả</strong></td>
+            <td><strong>Lượt xem</strong></td>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td><img src="~/images/products/@item.Image" width="100px" height="100px" alt="default" /> </td>
+
+                <td>@item.Code</td>
+                <td>@item.Name</td>
+                <td>@item.Category.CategoryName</td>
+                <td>@item.Price</td>
+                <td>@item.Description</td>
+                <td>@item.ProductCountView</td>
+                <td>
+                    <a class="btn btn-outline-info" asp-controller="Product" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn-outline-danger" asp-controller="Product" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

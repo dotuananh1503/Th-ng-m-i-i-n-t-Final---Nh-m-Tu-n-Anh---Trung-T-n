@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewData["Title"] = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Carousel{
+    <div class="slider movie-items">
+        <div class="container">
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+}
+<h3>Thông tin đơn hàng</h3>
+    <hr />
+    <h3>Giỏ hàng</h3>
+    @if (ViewBag.total == 0)
+    {
+        <h4>Bạn chưa có sản phẩm nào trong giỏ hàng</h4>
+    }
+    else
+    {
+        <table class="table-bordered table">
+            <tr>
+                <th>Tùy chọn</th>
+                <th>Mã sản phẩm</th>
+                <th>Tên sản phẩm</th>
+                <th>Hình ảnh</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+            </tr>
+            @foreach (var item in ViewBag.cart)
+            {
+                <tr>
+                    <td><a asp-controller="cart" asp-action="remove" asp-route-id="@item.Product.Id">Xóa</a></td>
+                    <td>@item.Product.Id</td>
+                    <td>@item.Product.Name</td>
+                    <td><img src="~/images/products/@item.Product.Image" width="60" height="60" /></td>
+                    <td>@item.Product.Price</td>
+                    <td>@item.Quantity</td>
+                    <td>@(item.Product.Price * item.Quantity)</td>
+                </tr>
+            }
+            <tr>
+                <td align="right" colspan="6">Tổng cộng</td>
+                <td>
+                    @ViewBag.total
+                </td>
+            </tr>
+        </table>
+    }
+    <a asp-controller="Home" asp-action="Index"><input type="button" class="btn btn-primary" value="Tiếp tục mua hàng"></a>
+    <a asp-controller="Cart" asp-action="Checkout"><input type="button" class="btn btn-primary" value="Thanh toán"></a>
+    <hr />
+
+
+
+
+

@@ -1,0 +1,341 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Huflix.Areas.Admin.Models.Product>
+@section Carousel{
+    <div class="slider movie-items">
+        <div class="container">
+            <div class="row">
+              
+            </div>
+        </div>
+    </div>
+}
+<h2>Sản phẩm mới nhất</h2>
+
+<div class="flex-wrap-movielist">
+    @if (Model.Count - 1 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 1);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title"><a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">@product.Name</a></h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 2 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 2);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title"><a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">@product.Name</a></h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 3 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 3);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title"><a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">@product.Name</a></h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 4 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 4);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title"><a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">@product.Name</a></h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 5 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 5);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title">@product.Name</h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">Details</a>
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Buy now</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 6 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 6);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title"><a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">@product.Name</a></h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 7 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 7);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title"><a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">@product.Name</a></h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 8 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 8);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title"><a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">@product.Name</a></h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 9 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 9);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title"><a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">@product.Name</a></h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 10 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 10);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title"><a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">@product.Name</a></h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 11 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 11);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title"><a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">@product.Name</a></h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 12 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 12);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title">@product.Name</h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">Details</a>
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Buy now</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 13 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 13);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title"><a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">@product.Name</a></h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 14 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 14);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title"><a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">@product.Name</a></h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 15 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 15);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title"><a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">@product.Name</a></h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 16 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 16);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title">@product.Name</h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">Details</a>
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Buy now</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 17 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 17);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title"><a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">@product.Name</a></h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 18 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 18);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title"><a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">@product.Name</a></h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 19 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 19);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title"><a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">@product.Name</a></h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.Count - 20 >= 0)
+    {
+        Huflix.Areas.Admin.Models.Product product = Model.ElementAt(Model.Count - 20);
+        <div class="movie-item-style-2 movie-item-style-1">
+            <div class="card h-100">
+                <img class="card-img-top" src="~/images/products/@product.Image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title"><a asp-controller="Detail" asp-action="Index" asp-route-id="@product.Id" asp-route-name="@product.Name" class="btn btn-primary">@product.Name</a></h3>
+                    <h5 class="card-title">@product.Price.ToString("0,000") VNĐ</h5>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@product.Id" class="btn btn-info">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<hr />

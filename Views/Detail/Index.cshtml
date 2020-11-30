@@ -1,0 +1,61 @@
+﻿@model Huflix.Areas.Admin.Models.Product
+@{
+    ViewData["Title"] = "Index";
+}
+@section Carousel{
+    <div class="slider movie-items">
+        <div class="container">
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+}
+
+<h1>Index</h1>
+<div>
+    <h4>Thông tin sản phẩm</h4>
+    <hr />
+    <div class="row">
+        <div class="col-sm-6">
+            <dl class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Code)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Code)
+                </dd>
+
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Price)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Price)
+                </dd>
+
+
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+            </dl>
+        </div>
+        <div class="col-sm-4">
+            <img src="~/images/products/@Model.Image" width="100" height="100" alt="image" />
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-controller="Home" asp-action="Index">Back to List</a>
+    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@Model.Id" class="btn btn-info">Mua ngay</a>
+</div>
+

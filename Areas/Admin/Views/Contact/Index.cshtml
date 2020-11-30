@@ -1,0 +1,37 @@
+﻿@model List<Huflix.Areas.Admin.Models.ContactModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h2>Count: @Model.Count</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Tên</td>
+            <td>Số điện thoại</td>
+            <td>Địa chỉ</td>
+            <td>Email</td>
+            <td>Nội dung</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ContactID</td>
+                <td>@item.ContactName</td>
+                <td>@item.ContactPhone</td>
+                <td>@item.ContactAddress</td>
+                <td>@item.ContactEmail</td>
+                <td>@item.ContactNote</td>
+                <td>
+                    <a class="btn btn-outline-danger" asp-controller="Contact" asp-action="Delete" asp-route-id="@item.ContactID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
